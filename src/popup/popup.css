@@ -20,6 +20,13 @@
   --border: #bdc3c7;
 }
 
+html {
+  width: 600px;
+  height: 700px;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   width: 600px;
