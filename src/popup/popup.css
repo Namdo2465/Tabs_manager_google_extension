@@ -142,7 +142,6 @@ body {
   flex: 1;
   overflow-y: auto;
   padding: 8px;
-  min-height: 200px;
 }
 
 .loading {
