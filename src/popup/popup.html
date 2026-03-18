@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Tab Manager</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Smart Tab Manager</h1>
+      <div class="header-actions">
+        <button id="settingsBtn" class="btn-icon" title="Settings">⚙️</button>
+        <button id="refreshBtn" class="btn-icon" title="Refresh">🔄</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">Total Tabs</span>
+        <span id="totalTabs" class="stat-value">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Inactive</span>
+        <span id="inactiveTabs" class="stat-value">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Duplicates</span>
+        <span id="duplicateTabs" class="stat-value">0</span>
+      </div>
+    </div>
+
+    <!-- Tab List -->
+    <div class="tab-list" id="tabList">
+      <div class="loading">Loading tabs...</div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button id="cleanupBtn" class="btn btn-primary">Run Cleanup</button>
+      <button id="closeDuplicatesBtn" class="btn btn-secondary">Close Duplicates</button>
+    </div>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

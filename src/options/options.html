@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Tab Manager Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Tab Manager Settings</h1>
+
+    <div class="settings-section">
+      <h2>Inactive Tab Detection</h2>
+      <div class="setting-group">
+        <label for="thresholdDays">Mark tabs as inactive after (days):</label>
+        <div class="input-group">
+          <input 
+            type="number" 
+            id="thresholdDays" 
+            min="1" 
+            max="30" 
+            value="3"
+          >
+          <span class="help-text">Tabs not accessed for this many days will be marked as inactive</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Auto-Cleanup</h2>
+      <div class="setting-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="autoCleanupEnabled">
+          <span>Enable automatic cleanup</span>
+        </label>
+        <span class="help-text">Automatically close inactive tabs and duplicates according to the schedule below</span>
+      </div>
+
+      <div class="setting-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="requireConfirmation" checked>
+          <span>Ask for confirmation before cleanup</span>
+        </label>
+        <span class="help-text">Even with auto-cleanup enabled, ask for confirmation before closing tabs</span>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>About</h2>
+      <p>
+        Smart Tab Manager helps you organize and manage your open tabs efficiently.
+        Features include:
+      </p>
+      <ul>
+        <li>Track last accessed time for each tab</li>
+        <li>Identify inactive tabs</li>
+        <li>Detect and close duplicate tabs</li>
+        <li>Automatic cleanup with customizable rules</li>
+      </ul>
+      <p><small>Version 1.0.0</small></p>
+    </div>
+
+    <div class="button-group">
+      <button id="saveBtn" class="btn btn-primary">Save Settings</button>
+      <button id="resetBtn" class="btn btn-secondary">Reset to Defaults</button>
+    </div>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>
