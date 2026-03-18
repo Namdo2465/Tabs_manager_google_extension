@@ -110,7 +110,7 @@ function createTabElement(tab, duplicateIds) {
 
   div.innerHTML = `
     <div class="tab-favicon">
-      <img src="${favicon}" alt="icon" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text x=%220%22 y=%2214%22 font-size=%2214%22 fill=%22gray%22>?</text></svg>'">
+      <img src="${favicon}" alt="icon" class="tab-icon">
     </div>
     <div class="tab-info">
       <div class="tab-title" title="${tab.title}">${escapeHtml(tab.title)}</div>
@@ -126,6 +126,12 @@ function createTabElement(tab, duplicateIds) {
       <button class="tab-btn close" title="Close tab" data-tab-id="${tab.id}">✕</button>
     </div>
   `;
+
+  // Handle favicon load error
+  const img = div.querySelector('.tab-icon');
+  img.addEventListener('error', () => {
+    img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="gray" stroke-width="1"/><text x="8" y="10" font-size="8" fill="gray" text-anchor="middle">?</text></svg>';
+  });
 
   // Close tab action
   const closeBtn = div.querySelector('.tab-btn.close');

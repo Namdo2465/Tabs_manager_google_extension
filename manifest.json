@@ -9,7 +9,8 @@
     "alarms"
   ],
   "background": {
-    "service_worker": "src/background/service-worker.js"
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
   },
   "action": {
     "default_popup": "src/popup/popup.html",
@@ -18,10 +19,5 @@
   "options_page": "src/options/options.html",
   "host_permissions": [
     "<all_urls>"
-  ],
-  "icons": {
-    "16": "assets/icons/icon-16.png",
-    "48": "assets/icons/icon-48.png",
-    "128": "assets/icons/icon-128.png"
-  }
+  ]
 }
